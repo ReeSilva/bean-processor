@@ -1,0 +1,23 @@
+<?php
+
+function bean_processor_ctools_plugin_api($owner, $api) {
+    if ($owner == 'feeds' && $api == 'plugins') {
+        return array('version' => 1);
+    }
+}
+
+function bean_processor_feeds_plugins() {
+    $info = array();
+    $info['BeanProcessor'] = array(
+        'name' => 'Bean Processor',
+        'description' => 'This processor will help to create new Blocks from a source.',
+        'help' => 'With this processor you will be able to mapping from source to an specific block type',
+        'handler' => array(
+            'parent' => 'FeedsProcessor',
+            'class' => 'BeanProcessor',
+            'file' => 'BeanProcessor.inc',
+            'path' => drupal_get_path('module', 'bean_processor'),
+        ),
+    );
+    return $info;
+}

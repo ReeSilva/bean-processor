@@ -1,0 +1,11 @@
+name = Bean Processor
+description = This module will create a new processor on Feeds Importer to create new Block Types based on the source
+core = 7.x
+package = Custom
+
+dependencies[] = ctools
+dependencies[] = bean
+dependencies[] = feeds
+
+version = "7.x-1.0"
+project = "bean_processor"
